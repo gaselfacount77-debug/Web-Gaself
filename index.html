@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Portofolio Ega</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- OPENING / LOADING -->
+<div id="opening">
+    <h1 id="text"></h1>
+    <div id="loading">Loading...</div>
+    <span id="cursor">|</span>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Ega</div>
+
+    <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="section">
+    <div class="home-kiri reveal">
+        <p class="tag">🚀 Ready to Innovate</p>
+
+        <h1>
+            Frontend <br>
+            <span>Developer</span>
+        </h1>
+
+        <p class="desc">
+            I create beautiful and functional websites with a focus on user experience and modern design.
+        </p>
+
+        <div class="btn">
+            <button>Projects</button>
+            <button onclick="location.href='#contact'" class="outline">Contact Me</button>
+        </div>
+    </div>
+
+    <div class="home-kanan reveal">
+        <img src="https://i.supaimg.com/cacda0f2-5915-4fae-8896-0bf87cddfe60/29e83af8-0887-4b9f-885e-c0c374422189.jpg" alt="Profile">
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+    <h2 class="reveal">About Me</h2>
+
+    <div class="about-container">
+        <div class="about-kiri">
+            <div class="slide-text">
+                <div class="greating">Hello I'm</div>
+                <div class="im-ega">Ega Khaulana Putra</div>
+
+                <p>saya adalah seorang murid smp yang lagi belajar</p>
+                <p>dengan komputer untuk membuat situs web.</p>
+                <p>saya ingin bekerja atau kuliah di Amerika</p>
+                <p>karena ingin belajar lebih banyak dan memahami dunia luar.</p>
+            </div>
+        </div>
+
+        <div class="about-kanan">
+            <div class="circle"></div>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section">
+    <h2 class="reveal">Portfolio</h2>
+
+    <div class="grid reveal">
+        <div class="card">
+            <img  src="https://via.placeholder.com/300" alt="">
+            <h3>Project 1</h3>
+            <a href="https://google.com" target="_blank">Lihat Project</a>
+        </div>
+        <div class="card">Project 2</div>
+        <div class="card">Project 3</div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <h2 class="reveal">Contact</h2>
+
+    <div class="contact-box">
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/6281266398078" target="_blank" class="contact-item wa">
+            <span>💬</span>
+            <div>
+                <h3>WhatsApp</h3>
+                <p>Chat langsung dengan saya</p>
+            </div>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:gaselfacount77@email.com" class="contact-item email">
+            <span>📧</span>
+            <div>
+                <h3>Email</h3>
+                <p>Kirim pesan via email</p>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
