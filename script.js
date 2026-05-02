@@ -1,19 +1,32 @@
 // ==========================
 // TEXT TYPING (OPENING)
 // ==========================
-const text = "Welcome To My Portfolio Website";
+const text = "Welcome To My\n Portfolio Website";
 let i = 0;
 
 function ketik() {
+  const el = document.getElementById("text");
+
   if (i < text.length) {
-    document.getElementById("text").innerHTML += text.charAt(i);
+
+    if (text.charAt(i) === "\n") {
+      el.innerHTML += "<br>";
+    } else {
+      el.innerHTML += text.charAt(i);
+    }
+
     i++;
+
+    // ❗ ini penting biar cursor selalu di akhir (tidak nyangkut)
+    document.getElementById("cursor").style.display = "inline";
+
     setTimeout(ketik, 80);
+
   } else {
+    document.getElementById("cursor").style.display = "none";
     setTimeout(hilang, 800);
   }
 }
-
 // ==========================
 // HILANGKAN OPENING
 // ==========================

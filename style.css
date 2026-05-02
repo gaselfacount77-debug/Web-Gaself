@@ -23,6 +23,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     z-index: 2000;
 }
 
@@ -122,7 +123,6 @@ nav {
 section {
     padding: 0 60px;
     scroll-margin-top: 80px;
-    background: transparent;
 }
 
 /* HOME */
@@ -133,6 +133,7 @@ section {
     justify-content: space-between;
     color: white;
     background: radial-gradient(circle, #992727, #6b3a3a);
+    padding-top: 80px;
 }
 
 .home-kiri {
@@ -177,19 +178,26 @@ section {
 #about {
     min-height: 100vh;
     display: flex;
-    flex-direction: column; /* INI KUNCI */
+    flex-direction: column;
     align-items: center;
     color: white;
     background: #2a0f0f;
     padding-top: 100px;
+    position: relative;
+}
+
+.circle-wrapper {
+    position: absolute;
+    left: 1400px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .circle {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     background: red;
     border-radius: 50%;
-    margin-right: 80px;
 }
 
 #about h2 {
@@ -207,10 +215,11 @@ section {
 
 .about-container {
     display: flex;
-    justify-content: space-between; /* jangan space-around */
+    justify-content: space-between;
     align-items: center;
     width: 100%;
 }
+
 .im-ega {
     font-size: 50px;
     font-weight: bold;
@@ -224,7 +233,7 @@ section {
 .about-kiri {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* kiri */
+    align-items: flex-start;
     gap: 10px;
 }
 
@@ -245,7 +254,7 @@ section {
 
 .card {
     background: black;
-    padding: 50px;
+    padding: 20px;
     border-radius: 10px;
     transition: 0.3s;
 }
@@ -274,7 +283,7 @@ section {
 
 .contact-item {
     display: flex;
-    align-items: center;   /* sejajar tengah vertikal */
+    align-items: center;
     gap: 15px;
     padding: 20px;
     border-radius: 15px;
@@ -286,7 +295,6 @@ section {
 
 .contact-item div {
     flex: 1;
-    margin-left: 0;
     margin-left: -10px;
 }
 
@@ -346,7 +354,21 @@ section {
     transform: translateX(0);
 }
 
-/* RESPONSIVE */
+/* GALLERY (DIGABUNG BIAR GAK TABRAKAN) */
+.gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 200px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
 
     nav {
@@ -378,48 +400,122 @@ section {
     .grid {
         grid-template-columns: 1fr;
     }
-}
 
-.card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.card h3 {
-    margin: 10px 0;
-}
-
-.card a {
-    color: red;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.card a:hover {
-    text-decoration: underline;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
+    .circle-wrapper {
+        position: static;
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+        transform: none;
     }
 
-    .menu {
+    .circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    /* SWIPE TANPA SCROLL BAR */
+    .gallery {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .gallery::-webkit-scrollbar {
         display: none;
     }
 
-    .content {
-        padding: 10px;
+    .gallery img {
+        min-width: 100%;
+        scroll-snap-align: center;
     }
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+#cursor {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.project-view {
+    display: none;
+    margin-top: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.3s ease;
+}
+
+.project-view.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* HIDDEN DEFAULT */
+.project-view {
+    display: none;
+    margin-top: 30px;
+}
+
+/* SHOW SAAT ACTIVE */
+.project-view.active {
+    display: block;
+}
+
+/* GALLERY */
+.gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 200px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* MOBILE SCROLL SWIPE */
+@media (max-width: 768px) {
+    .gallery {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        justify-content: flex-start;
+    }
+
+    .gallery img {
+        width: 100vw;   /* 🔥 FULL LEBAR LAYAR HP */
+        height: auto;   /* biar gak ketarik */
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        border-radius: 0; /* optional biar full layar beneran */
+    }
+}
+
+/* BUTTON LIHAT WEBSITE */
+.view-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    width: fit-content;
+    background: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.view-btn:hover {
+    transform: scale(1.05);
 }
