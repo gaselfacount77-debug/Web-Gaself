@@ -446,38 +446,30 @@ section {
     border-radius: 10px;
 }
 
-/* ================= BUTTON ================= */
-.view-btn {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    width: fit-content;
-    background: red;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.view-btn:hover {
-    transform: scale(1.05);
-}
-
 /* ================= CONTACT ================= */
 #contact {
     min-height: 100vh;
     padding: 100px 20px;
     text-align: center;
+    color: white;
+    background: radial-gradient(circle, #1a0000, #0d0d0d);
 }
 
+#contact h2 {
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+/* CONTAINER */
 .contact-box {
-    width: 350px;
-    margin: 60px auto;
+    max-width: 500px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+/* ITEM */
 .contact-item {
     display: flex;
     align-items: center;
@@ -486,12 +478,89 @@ section {
     border-radius: 15px;
     text-decoration: none;
     color: white;
-    background: #2c2c2c;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(10px);
     transition: 0.3s;
 }
 
+/* ICON */
+.contact-item span {
+    font-size: 28px;
+}
+
+/* TEXT */
+.contact-item div {
+    text-align: left;
+}
+
+.contact-item h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* HOVER GLOBAL */
 .contact-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* WHATSAPP */
+.contact-item.wa:hover {
+    background: #25D366;
+    box-shadow: 0 0 20px #25D366;
+}
+
+/* EMAIL */
+.contact-item.email:hover {
+    background: #ff4d4d;
+    box-shadow: 0 0 20px #ff4d4d;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+    .contact-box {
+        width: 90%;
+    }
+
+    .contact-item {
+        padding: 15px;
+    }
+
+    .contact-item span {
+        font-size: 24px;
+    }
+}
+
+
+/* ================= ANIMASI ================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: 0.8s;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-text {
+    opacity: 0;
+    transform: translateX(-120px);
+    transition: 0.8s;
+}
+
+.slide-text.active {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* ================= ANIMASI ================= */
