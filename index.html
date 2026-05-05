@@ -6,6 +6,7 @@
     <title>Portofolio Ega</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <!-- OPENING / LOADING -->
@@ -56,7 +57,6 @@
 </section>
 
 <!-- ABOUT -->
-
 <section id="about" class="section">
 
     <h2 class="reveal">About Me</h2>
@@ -76,16 +76,16 @@
             </div>
         </div>
 
-  <!-- KANAN (FOTO) -->
+        <!-- KANAN -->
         <div class="about-kanan">
             <div class="circle">
                 <img src="https://i.supaimg.com/cacda0f2-5915-4fae-8896-0bf87cddfe60/ae939a84-d6cb-4c6c-8508-91acfe5b3bde.png">
             </div>
         </div>
-</div>
+
     </div>
 
-    <!-- STATS (tetap di bawah) -->
+    <!-- STATS -->
     <section class="stats">
         <div class="stat-card">
             <div class="icon">💻</div>
@@ -95,7 +95,7 @@
 
         <div class="stat-card">
             <div class="icon">🏆</div>
-            <h2 class="number" data-target="0">0</h2>
+            <h2 class="number" data-target="1">0</h2>
             <p>Certificates</p>
         </div>
 
@@ -113,38 +113,50 @@
     <h2 class="reveal">Portfolio</h2>
 
     <div class="grid reveal">
-        <div class="card" onclick="showProject()">
+        <div class="card" onclick="openProject()">
             <h3>Project</h3>
         </div>
-
-        <div class="card">
+        <div class="card" onclick="openCertificate()">
             <h3>Certificate</h3>
         </div>
-
         <div class="card">
             <h3>Tech Stack</h3>
         </div>
     </div>
 
-    <!-- DETAIL PROJECT (HIDDEN DEFAULT) -->
+    <!-- PROJECT VIEW -->
     <div class="project-view" id="projectView">
-
-        <div class="gallery">
-            <img src="https://i.supaimg.com/cacda0f2-5915-4fae-8896-0bf87cddfe60/9028cc23-1801-4cac-8b37-a46ab36b9f08.png">
-            <img src="https://i.supaimg.com/cacda0f2-5915-4fae-8896-0bf87cddfe60/ed721cb0-938f-423d-8543-d9eef0193933.png">
-            <img src="https://i.supaimg.com/cacda0f2-5915-4fae-8896-0bf87cddfe60/955fc586-c6e3-4695-bdfd-13711433b65d.png">
+        <div class="project-container">
+            <a href="https://savings-gaself.vercel.app/" target="_blank" class="project-card-main">
+                <div class="project-img-box">
+                    <img src="https://i.supaimg.com/cacda0f2-5915-4fae-8896-0bf87cddfe60/2dee4128-9f64-4659-bbf8-7b8fec778bf0.png" alt="Gaself Penghitung">
+                </div>
+                <div class="project-details">
+                    <h3>Gaself Penghitung</h3>
+                    <p>Website pencatat keuangan simpel dan responsif.</p>
+                    <span class="detail-link">Lihat Detail →</span>
+                </div>
+            </a>
         </div>
+    </div>
 
-        <!-- BUTTON LIHAT WEBSITE -->
-        <a href="https://savings-gaself.vercel.app/" target="_blank" class="view-btn">
-            Lihat Website
-        </a>
-
+    <!-- CERTIFICATE VIEW (Sudah Diperbaiki) -->
+    <div class="certificate-view" id="certificateView">
+        <div class="certificate-container">
+            <div class="certificate-card">
+                <img src="https://i.ibb.co/pvPX7d62/Sertifikat-Kompetensi-Dicoding-Indonesia-pages-to-jpg-0001.jpg" alt="Sertifikat">
+                <div class="project-details">
+                    <h3>Sertifikat Kompetensi</h3>
+                    <p>Dicoding Indonesia - Belajar Dasar Pemrograman Web</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- CONTACT (SUDAH BENAR, JANGAN DUPLIKAT) -->
+<!-- CONTACT -->
 <section id="contact" class="section">
+
     <h2 class="reveal">Contact</h2>
 
     <div class="contact-box">
@@ -164,6 +176,7 @@
             </div>
         </a>
     </div>
+
 </section>
 
 <script src="script.js"></script>
@@ -176,31 +189,44 @@ function showProject() {
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const numbers = document.querySelectorAll(".number");
+    const numbers = document.querySelectorAll(".number");
 
-  numbers.forEach(num => {
-    let end = parseInt(num.getAttribute("data-target"));
+    numbers.forEach(num => {
+        let end = parseInt(num.getAttribute("data-target"));
 
-    // kalau 0, langsung set tanpa animasi
-    if (end === 0) {
-      num.textContent = 0;
-      return;
-    }
+        if (end === 0) {
+            num.textContent = 0;
+            return;
+        }
 
-    let start = 0;
-    let speed = 30;
+        let start = 0;
+        let speed = 30;
 
-    let counter = setInterval(() => {
-      start++;
-      num.textContent = start;
+        let counter = setInterval(() => {
+            start++;
+            num.textContent = start;
 
-      if (start >= end) {
-        clearInterval(counter);
-        num.textContent = end;
-      }
-    }, speed);
-  });
+            if (start >= end) {
+                clearInterval(counter);
+                num.textContent = end;
+            }
+        }, speed);
+    });
 });
+</script>
+
+
+
+<script>
+function openProject() {
+    document.getElementById("projectView").classList.add("active");
+    document.getElementById("certificateView").classList.remove("active");
+}
+
+function openCertificate() {
+    document.getElementById("certificateView").classList.add("active");
+    document.getElementById("projectView").classList.remove("active");
+}
 </script>
 
 </body>

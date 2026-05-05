@@ -113,4 +113,3 @@ function revealSlideText() {
 
 window.addEventListener("scroll", revealSlideText);
 window.addEventListener("load", revealSlideText);
-
