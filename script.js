@@ -113,3 +113,33 @@ function revealSlideText() {
 
 window.addEventListener("scroll", revealSlideText);
 window.addEventListener("load", revealSlideText);
+
+
+// ==========================
+// TOGGLE PROJECT / CERTIFICATE VIEW
+// ==========================
+
+function toggleView(type) {
+    const project = document.getElementById("projectView");
+    const certificate = document.getElementById("certificateView");
+
+    // PROJECT
+    if (type === "project") {
+        if (project.classList.contains("active")) {
+            project.classList.remove("active");
+        } else {
+            project.classList.add("active");
+            certificate.classList.remove("active");
+        }
+    }
+
+    // CERTIFICATE
+    if (type === "certificate") {
+        if (certificate.classList.contains("active")) {
+            certificate.classList.remove("active");
+        } else {
+            certificate.classList.add("active");
+            project.classList.remove("active");
+        }
+    }
+}

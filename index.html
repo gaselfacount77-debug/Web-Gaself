@@ -52,7 +52,7 @@
     </div>
 
     <div class="home-kanan reveal">
-        <img src="https://i.supaimg.com/cacda0f2-5915-4fae-8896-0bf87cddfe60/29e83af8-0887-4b9f-885e-c0c374422189.jpg" alt="Profile">
+        <img src="https://i.ibb.co/zCkqtq0/Data-extraction-amico-1.png" alt="Profile">
     </div>
 </section>
 
@@ -79,7 +79,7 @@
         <!-- KANAN -->
         <div class="about-kanan">
             <div class="circle">
-                <img src="https://i.supaimg.com/cacda0f2-5915-4fae-8896-0bf87cddfe60/ae939a84-d6cb-4c6c-8508-91acfe5b3bde.png">
+                <img src="https://i.ibb.co/1tvfwbBh/Foto-saya.jpg">
             </div>
         </div>
 
@@ -112,16 +112,21 @@
 <section id="portfolio" class="section">
     <h2 class="reveal">Portfolio</h2>
 
-    <div class="grid reveal">
-        <div class="card" onclick="openProject()">
-            <h3>Project</h3>
-        </div>
-        <div class="card" onclick="openCertificate()">
-            <h3>Certificate</h3>
-        </div>
-        <div class="card">
-            <h3>Tech Stack</h3>
-        </div>
+ <div class="grid reveal">
+
+    <div class="card" onclick="toggleView('project')">
+        <h3>Project</h3>
+    </div>
+
+    <div class="card" onclick="toggleView('certificate')">
+        <h3>Certificate</h3>
+    </div>
+
+    <div class="card">
+        <h3>Tech Stack</h3>
+    </div>
+
+</div>
     </div>
 
     <!-- PROJECT VIEW -->
@@ -132,7 +137,7 @@
 
             <a href="https://savings-gaself.vercel.app/" target="_blank" class="project-card-main">
                 <div class="project-img-box">
-                    <img src="https://i.supaimg.com/cacda0f2-5915-4fae-8896-0bf87cddfe60/2dee4128-9f64-4659-bbf8-7b8fec778bf0.png" alt="Gaself Penghitung">
+                    <img src="https://i.ibb.co/5WBzwfqv/Penghitung.jpg" alt="Gaself Penghitung">
                 </div>
                 <div class="project-details">
                     <h3>Gaself Penghitung</h3>
@@ -144,7 +149,7 @@
             <!-- PROJECT 2 -->
              <a href="https://caffe-web-gaself.vercel.app/" target="_blank" class="project-card-main">
                 <div class="project-img-box"> 
-                    <img src="https://i.supaimg.com/cacda0f2-5915-4fae-8896-0bf87cddfe60/e3b9e181-8315-4233-ab58-60ef4d103e9c.png" alt="Project 2">
+                    <img src="https://i.ibb.co/vCmdwcmd/Menu-Cafe.jpg" alt="Project 2">
                 </div>
                 <div class="project-details">
                     <h3>Cafe Menu</h3>
@@ -156,7 +161,7 @@
              <!-- PROJECT 3 -->
             <a href="https://caurex-store.vercel.app/" target="_blank" class="project-card-main">
                 <div class="project-img-box"> 
-                    <img src="https://i.supaimg.com/cacda0f2-5915-4fae-8896-0bf87cddfe60/f1cf48e8-3175-4719-95f3-05c024def169.png" alt="Project 3">
+                    <img src="https://i.ibb.co/5X65Ttxc/Caurex.jpg" alt="Project 3">
                 </div>
                 <div class="project-details">
                     <h3>Store Website</h3>
@@ -164,6 +169,19 @@
                     <span class="detail-link">Lihat Detail →</span>
                 </div>
              </a>
+
+             <!-- PROJECT 4 -->
+             <a href="https://caffe-website-sigma.vercel.app/" target="_blank" class="project-card-main">
+                <div class="project-img-box"> 
+                    <img src="https://i.ibb.co/7NNZX9vH/Cafe-website.jpg" alt="Project 4">
+                </div>
+                <div class="project-details">
+                    <h3>Cafe Website</h3>
+                    <p>Website yang berisi tentang xafe kamu untuk supaya pelanggan tetarik untuk datang ke restaurant mu</p>
+                    <span class="detail-link">Lihat Detail →</span>
+                </div>
+             </a>
+
         </div>
     </div>
 
@@ -187,7 +205,7 @@
     <h2 class="reveal">Contact</h2>
 
     <div class="contact-box">
-        <a href="https://wa.me/6281266398078" class="contact-item wa">
+        <a href="https://wa.me/6288271437890" class="contact-item wa">
             <span>💬</span>
             <div>
                 <h3>WhatsApp</h3>
@@ -253,6 +271,18 @@ function openProject() {
 function openCertificate() {
     document.getElementById("certificateView").classList.add("active");
     document.getElementById("projectView").classList.remove("active");
+}
+</script>
+
+<script>
+function toggleProject() {
+    const project = document.getElementById("project");
+
+    if (project.style.display === "none" || project.style.display === "") {
+        project.style.display = "block";
+    } else {
+        project.style.display = "none";
+    }
 }
 </script>
 
